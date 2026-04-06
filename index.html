@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenuineTrade | Verified Exporters &amp; Real Global Buyers</title>
+    <meta
+      name="description"
+      content="GenuineTrade is a trust-first B2B trade platform for verified exporters, serious buyers, RFQ matching, and structured sourcing workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-name">GenuineTrade</span>
+          <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#trust">Trust</a>
+          <a href="#intelligence">Market Pulse</a>
+          <a href="#marketplace">Marketplace</a>
+          <a href="#forms">Get Started</a>
+          <a data-guest-only href="login.html?mode=login">Login</a>
+          <a data-auth-only href="dashboard.html" hidden>Dashboard</a>
+          <button class="btn btn-secondary btn-small" type="button" data-logout hidden>Logout</button>
+          <a class="btn btn-secondary" data-guest-only href="login.html?mode=signup">Join Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">India-to-world trade matching</div>
+            <h1>Verified Exporters, Qualified Buyers, and Smarter RFQ Matching</h1>
+            <p>
+              GenuineTrade turns a static lead-gen experience into a working B2B sourcing platform
+              with exporter verification, buyer RFQs, trust scoring, smart matching, and direct
+              conversations between both sides.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#exporter-form">Join as Exporter</a>
+              <a class="btn btn-accent" href="#buyer-form">Submit Buyer Requirement</a>
+            </div>
+
+            <div class="hero-points" aria-label="Platform highlights">
+              <span class="hero-point">G-Check trust badges</span>
+              <span class="hero-point">RFQ-to-exporter scoring</span>
+              <span class="hero-point">Firebase-backed workflows</span>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Platform summary">
+            <span class="panel-label">Trade operating system</span>
+            <h2>Built for real export discovery, not noisy lead lists.</h2>
+            <p>
+              Profiles, RFQs, notifications, and buyer-exporter conversations all stay inside one
+              clean operating layer designed for fast MVP execution.
+            </p>
+
+            <div class="signal-list">
+              <div class="signal-card">
+                <span class="signal-icon">EX</span>
+                <div>
+                  <strong><span data-stat-exporters>0</span> approved exporters</strong>
+                  <span>Only moderated exporters appear in the searchable buyer marketplace.</span>
+                </div>
+              </div>
+              <div class="signal-card">
+                <span class="signal-icon">RF</span>
+                <div>
+                  <strong><span data-stat-rfqs>0</span> active RFQs</strong>
+                  <span>New buyer requests instantly score and notify relevant exporters.</span>
+                </div>
+              </div>
+              <div class="signal-card">
+                <span class="signal-icon">GL</span>
+                <div>
+                  <strong><span data-stat-countries>0</span> market regions</strong>
+                  <span>Country filters and live market pulse data support better sourcing decisions.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="market-mini-grid" data-hero-market-pulse></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="trust">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">Trust section</div>
+            <h2 class="section-title">A trust-first layer for modern B2B trade operations.</h2>
+            <p class="section-copy">
+              GenuineTrade introduces G-Check scoring, exporter compliance inputs, and cleaner
+              sourcing workflows so buyers can act on structured information instead of vague
+              outreach.
+            </p>
+          </div>
+
+          <div class="trust-grid">
+            <article class="card">
+              <span class="card-icon">GC</span>
+              <h3>G-Check Trust</h3>
+              <p>
+                Exporter badges upgrade from New to Premium based on IEC, GST, website presence,
+                completed deals, and response-rate strength.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-icon">SM</span>
+              <h3>Smart Matching</h3>
+              <p>
+                RFQs are scored by product fit, MOQ compatibility, required certifications, and
+                exporter trust score so the best suppliers rise to the top.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-icon">NT</span>
+              <h3>Live Notifications</h3>
+              <p>
+                Exporters get notified the moment a new matched RFQ lands, while buyers can track
+                status and follow-up conversations in one interface.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-icon">CH</span>
+              <h3>Structured Chat</h3>
+              <p>
+                Buyers and exporters can move from discovery to direct communication without
+                leaving the platform or losing RFQ context.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="intelligence">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">API integrations</div>
+            <h2 class="section-title">Market pulse and country intelligence from live public APIs.</h2>
+            <p class="section-copy">
+              The platform now uses live exchange-rate and country directory data to make the MVP
+              feel closer to a real trade workspace instead of a static landing page.
+            </p>
+          </div>
+
+          <div class="panel-grid">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">FX snapshot</div>
+                  <h2>Trade planning exchange rates</h2>
+                </div>
+              </div>
+              <div class="market-pulse-grid" data-market-pulse-cards></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Country directory</div>
+                  <h2>Global sourcing-ready markets</h2>
+                </div>
+              </div>
+              <div class="country-directory" data-country-directory></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="marketplace">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">Marketplace preview</div>
+            <h2 class="section-title">Approved exporters already active on GenuineTrade.</h2>
+            <p class="section-copy">
+              This live strip is powered by the same exporter collection buyers search inside the
+              buyer dashboard.
+            </p>
+          </div>
+
+          <div class="marketplace-grid" data-featured-exporters></div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">How it works</div>
+            <h2 class="section-title">Three steps from profile setup to qualified trade conversation.</h2>
+            <p class="section-copy">
+              The product keeps the first version focused: onboard the right company data, score
+              the right RFQs, and move matched buyers and exporters into direct messaging.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="card step-card">
+              <span class="step-number">1</span>
+              <h3>Build a verified trade profile</h3>
+              <p>
+                Exporters add company, compliance, product, MOQ, and credibility details while
+                buyers capture clear sourcing requirements from the start.
+              </p>
+            </article>
+
+            <article class="card step-card">
+              <span class="step-number">2</span>
+              <h3>Submit structured RFQs</h3>
+              <p>
+                Buyers share quantity, preferred country, and certification needs, which become
+                match-ready signals inside Firestore.
+              </p>
+            </article>
+
+            <article class="card step-card">
+              <span class="step-number">3</span>
+              <h3>Match, notify, and message</h3>
+              <p>
+                The system ranks exporters, notifies likely suppliers, and opens a direct path to
+                follow-up inside the same workspace.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="forms">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">Dynamic onboarding</div>
+            <h2 class="section-title">Create a real account and land straight inside the product.</h2>
+            <p class="section-copy">
+              These forms now connect directly to Firebase Auth and Firestore, while still working
+              in demo mode until real Firebase keys are added.
+            </p>
+          </div>
+
+          <div class="banner" data-mode-banner hidden></div>
+
+          <div class="form-shell">
+            <div class="forms-grid">
+              <section class="form-card" id="exporter-form" aria-labelledby="exporter-title">
+                <h3 id="exporter-title">Exporter Verification Form</h3>
+                <p>
+                  Launch an exporter account with product, MOQ, compliance, and identity signals
+                  that feed the G-Check trust engine.
+                </p>
+
+                <form class="lead-form" data-signup-form="exporter">
+                  <div class="form-grid">
+                    <div class="field-group">
+                      <label for="exporter-name">Name</label>
+                      <input id="exporter-name" name="name" type="text" placeholder="Your full name" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-company">Company</label>
+                      <input id="exporter-company" name="companyName" type="text" placeholder="Company name" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-country">Country</label>
+                      <select id="exporter-country" name="country" data-country-select data-placeholder="Select country" required></select>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-product">Primary Product</label>
+                      <input id="exporter-product" name="product" type="text" placeholder="What do you export?" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-moq">MOQ</label>
+                      <input id="exporter-moq" name="moq" type="text" placeholder="Example: 500 kg" />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-certifications">Certifications</label>
+                      <input
+                        id="exporter-certifications"
+                        name="certifications"
+                        type="text"
+                        placeholder="Example: ISO 22000, USDA Organic"
+                      />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-website">Website</label>
+                      <input id="exporter-website" name="website" type="url" placeholder="https://yourcompany.com" />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-iec">IEC</label>
+                      <input id="exporter-iec" name="iec" type="text" placeholder="Importer Exporter Code" />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-gst">GST</label>
+                      <input id="exporter-gst" name="gst" type="text" placeholder="GST registration number" />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-email">Email</label>
+                      <input id="exporter-email" name="email" type="email" placeholder="you@company.com" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="exporter-password">Password</label>
+                      <input
+                        id="exporter-password"
+                        name="password"
+                        type="password"
+                        placeholder="Create a secure password"
+                        required
+                      />
+                    </div>
+
+                    <div class="field-group full">
+                      <label for="exporter-product-details">Product Details</label>
+                      <textarea
+                        id="exporter-product-details"
+                        name="productDetails"
+                        placeholder="Share specs, export readiness, packaging, or category strengths"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="hero-actions">
+                    <button class="btn btn-primary" type="submit">Apply for Verification</button>
+                    <a class="btn btn-ghost" href="login.html?mode=login">Already have an account?</a>
+                  </div>
+
+                  <p class="form-note" role="status" hidden></p>
+                </form>
+              </section>
+
+              <section class="form-card" id="buyer-form" aria-labelledby="buyer-title">
+                <h3 id="buyer-title">Buyer Requirement Form</h3>
+                <p>
+                  Create a buyer account, send your first RFQ, and instantly view matched
+                  exporters based on product, MOQ, certification, and trust score.
+                </p>
+
+                <form class="lead-form" data-signup-form="buyer">
+                  <div class="form-grid">
+                    <div class="field-group">
+                      <label for="buyer-name">Name</label>
+                      <input id="buyer-name" name="name" type="text" placeholder="Your full name" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-company">Company</label>
+                      <input id="buyer-company" name="companyName" type="text" placeholder="Company name" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-country">Country</label>
+                      <select id="buyer-country" name="country" data-country-select data-placeholder="Select country" required></select>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-product">Product Requirement</label>
+                      <input id="buyer-product" name="product" type="text" placeholder="What are you sourcing?" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-quantity">Quantity</label>
+                      <input id="buyer-quantity" name="quantity" type="text" placeholder="Example: 1000 kg" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-preferred-country">Preferred Country</label>
+                      <select
+                        id="buyer-preferred-country"
+                        name="preferredCountry"
+                        data-country-select
+                        data-include-any="true"
+                        data-any-label="Any approved country"
+                      ></select>
+                    </div>
+
+                    <div class="field-group full">
+                      <label for="buyer-certifications">Required Certifications</label>
+                      <input
+                        id="buyer-certifications"
+                        name="requiredCertifications"
+                        type="text"
+                        placeholder="Example: USDA Organic, ISO 22000"
+                      />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-email">Email</label>
+                      <input id="buyer-email" name="email" type="email" placeholder="you@company.com" required />
+                    </div>
+
+                    <div class="field-group">
+                      <label for="buyer-password">Password</label>
+                      <input
+                        id="buyer-password"
+                        name="password"
+                        type="password"
+                        placeholder="Create a secure password"
+                        required
+                      />
+                    </div>
+
+                    <div class="field-group full">
+                      <label for="buyer-notes">RFQ Notes</label>
+                      <textarea
+                        id="buyer-notes"
+                        name="notes"
+                        placeholder="Add specs, destination market, packaging needs, or timeline"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="hero-actions">
+                    <button class="btn btn-accent" type="submit">Create Buyer Account</button>
+                    <a class="btn btn-ghost" href="login.html?mode=login">Already have an account?</a>
+                  </div>
+
+                  <p class="form-note" role="status" hidden></p>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <p>&copy; <span data-current-year></span> GenuineTrade</p>
+            <p>Verified profiles, RFQ matching, live notifications, and scalable Firebase-backed trade workflows.</p>
+          </div>
+          <div class="footer-links">
+            <a class="btn btn-secondary btn-small" href="login.html?mode=login">Open Login</a>
+            <a class="btn btn-secondary btn-small" href="dashboard.html">Open Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

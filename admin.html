@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | GenuineTrade</title>
+    <meta
+      name="description"
+      content="Approve exporters, adjust trust scores, and review all RFQs inside GenuineTrade."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-name">GenuineTrade</span>
+          <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="exporter.html" data-exporter-only hidden>Exporter</a>
+          <a href="buyer.html" data-buyer-only hidden>Buyer</a>
+          <a href="admin.html">Admin</a>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="workspace-main">
+      <section class="section">
+        <div class="container">
+          <div class="banner" data-mode-banner hidden></div>
+
+          <section class="workspace-hero">
+            <div class="workspace-heading">
+              <div class="eyebrow">Admin moderation</div>
+              <h1>Exporter approval, RFQ visibility, and trust control</h1>
+              <p>
+                Review every exporter profile, update trust scores manually when needed, and keep
+                RFQ quality visible across the whole marketplace.
+              </p>
+            </div>
+
+            <div class="workspace-meta">
+              <div class="workspace-actions">
+                <a class="btn btn-primary" href="dashboard.html">Back to Dashboard</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="stat-grid" data-admin-stats></section>
+
+          <section class="info-card">
+            <div class="card-header">
+              <div>
+                <div class="eyebrow">Admin actions</div>
+                <h2>All exporter applications</h2>
+              </div>
+
+              <form class="toolbar toolbar-inline" data-admin-filter-form>
+                <input
+                  name="query"
+                  type="text"
+                  placeholder="Filter by company, product, country, or email"
+                />
+                <button class="btn btn-secondary btn-small" type="submit">Filter</button>
+              </form>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Product</th>
+                    <th>Country</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th>Trust Score</th>
+                    <th>Badge</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-exporters></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="info-card">
+            <div class="card-header">
+              <div>
+                <div class="eyebrow">RFQ visibility</div>
+                <h2>All buyer RFQs</h2>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Buyer</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Country</th>
+                    <th>Status</th>
+                    <th>Matches</th>
+                    <th>Created</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-rfqs></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <p>&copy; <span data-current-year></span> GenuineTrade</p>
+            <p>Moderation tools for approvals, trust controls, and full-platform RFQ visibility.</p>
+          </div>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

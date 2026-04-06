@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | GenuineTrade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin">
+    <header class="site-header" data-site-header>
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-mark">GT</span>
+          <span class="brand-copy">
+            <span class="brand-name">GenuineTrade</span>
+            <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html#market">Market</a>
+          <a href="index.html#insights">Insights</a>
+          <a href="index.html#pricing">Pricing</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-secondary" href="dashboard.html">Dashboard</a>
+          <div class="profile-menu" data-profile-menu>
+            <button class="profile-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-profile-trigger>
+              <span data-profile-initials>GT</span>
+            </button>
+            <div class="profile-dropdown" data-profile-dropdown>
+              <a href="dashboard.html" data-dashboard-link>Dashboard</a>
+              <button type="button" data-logout>Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="section admin-page">
+      <div class="container stack-layout">
+        <section class="hero-banner">
+          <div>
+            <span class="eyebrow">Admin panel</span>
+            <h1>Control pricing, leads, users, and payments.</h1>
+            <p>
+              Manage plan inventory, review submissions, and keep the marketplace commercially
+              organized.
+            </p>
+          </div>
+        </section>
+
+        <section class="admin-layout">
+          <article class="panel-card">
+            <div class="panel-head">
+              <span class="panel-chip">Manage plans</span>
+              <h2>Create or update pricing</h2>
+            </div>
+
+            <form class="stack-form" data-plan-form>
+              <input type="hidden" name="planId" />
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" placeholder="Plan name" required />
+              </label>
+              <div class="input-grid">
+                <label>
+                  <span>Price (INR)</span>
+                  <input name="price" type="number" min="0" step="1" placeholder="4999" required />
+                </label>
+                <label>
+                  <span>Duration</span>
+                  <select name="duration" required>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                <span>Features</span>
+                <textarea name="features" rows="4" placeholder="One feature per line"></textarea>
+              </label>
+              <label class="checkbox-row">
+                <input name="isPopular" type="checkbox" />
+                <span>Mark as popular</span>
+              </label>
+
+              <div class="inline-actions">
+                <button class="btn btn-primary" type="submit">Save plan</button>
+                <button class="btn btn-secondary" type="button" data-plan-reset>Reset</button>
+              </div>
+              <p class="form-feedback" data-plan-form-feedback hidden></p>
+            </form>
+          </article>
+
+          <article class="panel-card">
+            <div class="panel-head">
+              <span class="panel-chip">Plans table</span>
+              <h2>All pricing plans</h2>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Duration</th>
+                    <th>Popular</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-plans>
+                  <tr>
+                    <td colspan="5">Loading plans...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel-card">
+          <div class="panel-head">
+            <span class="panel-chip">Exporter requests</span>
+            <h2>Exporter submissions</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Company</th>
+                  <th>Product</th>
+                  <th>Country</th>
+                  <th>Contact</th>
+                </tr>
+              </thead>
+              <tbody data-admin-exporters>
+                <tr>
+                  <td colspan="5">Loading exporters...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <div class="panel-head">
+            <span class="panel-chip">Users</span>
+            <h2>Platform accounts</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Current plan</th>
+                  <th>Expiry</th>
+                </tr>
+              </thead>
+              <tbody data-admin-users>
+                <tr>
+                  <td colspan="5">Loading users...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <div class="panel-head">
+            <span class="panel-chip">RFQs</span>
+            <h2>Buyer quote requests</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Country</th>
+                  <th>Contact</th>
+                </tr>
+              </thead>
+              <tbody data-admin-rfqs>
+                <tr>
+                  <td colspan="5">Loading RFQs...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <div class="panel-head">
+            <span class="panel-chip">Payments</span>
+            <h2>Subscription transactions</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plan</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Order ID</th>
+                  <th>Payment ID</th>
+                </tr>
+              </thead>
+              <tbody data-admin-payments>
+                <tr>
+                  <td colspan="5">Loading payments...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="toast" data-toast hidden></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

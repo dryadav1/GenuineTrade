@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | GenuineTrade</title>
+    <meta
+      name="description"
+      content="Login or create a GenuineTrade account to access exporter, buyer, and admin workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="auth">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-name">GenuineTrade</span>
+          <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="index.html#trust">Trust</a>
+          <a href="index.html#intelligence">Market Pulse</a>
+          <a href="index.html#forms">Join</a>
+          <a data-auth-only href="dashboard.html" hidden>Dashboard</a>
+          <button class="btn btn-secondary btn-small" type="button" data-logout hidden>Logout</button>
+          <a class="btn btn-secondary" data-guest-only href="index.html">Back to Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <section class="section">
+        <div class="container auth-layout">
+          <aside class="auth-preview hero-panel">
+            <span class="panel-label">Platform access</span>
+            <h1>Access the SaaS workspace built for verified trade operations.</h1>
+            <p>
+              Exporters manage trust, approvals, products, and matched RFQs. Buyers search
+              suppliers, submit structured sourcing requests, and talk directly with exporters
+              inside one clean workflow.
+            </p>
+
+            <div class="signal-list">
+              <div class="signal-card">
+                <span class="signal-icon">EX</span>
+                <div>
+                  <strong>Exporter workspace</strong>
+                  <span>Profile editor, trust badge analytics, notifications, and inbound RFQ pipeline.</span>
+                </div>
+              </div>
+              <div class="signal-card">
+                <span class="signal-icon">BY</span>
+                <div>
+                  <strong>Buyer workspace</strong>
+                  <span>Search filters, RFQ creation, match scoring, and supplier conversations.</span>
+                </div>
+              </div>
+              <div class="signal-card">
+                <span class="signal-icon">AD</span>
+                <div>
+                  <strong>Admin panel</strong>
+                  <span>Approve exporters, update trust score, and review all RFQs from one panel.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="market-mini-grid" data-auth-market-pulse></div>
+            <div class="demo-note" data-demo-note hidden></div>
+          </aside>
+
+          <section class="auth-card">
+            <div class="auth-toggle" role="tablist" aria-label="Authentication mode">
+              <button class="auth-toggle-btn is-active" type="button" data-auth-target="login">Login</button>
+              <button class="auth-toggle-btn" type="button" data-auth-target="signup">Sign Up</button>
+            </div>
+
+            <div class="banner" data-mode-banner hidden></div>
+
+            <form class="auth-form" data-auth-form="login">
+              <div class="section-heading compact">
+                <div class="eyebrow">Welcome back</div>
+                <h2 class="section-title small">Login to your workspace</h2>
+                <p class="section-copy">Sign in with your email and password to continue.</p>
+              </div>
+
+              <div class="field-group">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
+
+              <div class="field-group">
+                <label for="login-password">Password</label>
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+
+              <div class="hero-actions compact-row">
+                <button class="btn btn-primary" type="submit">Login</button>
+                <button class="btn btn-ghost" type="button" data-auth-switch="signup">Need an account?</button>
+              </div>
+
+              <p class="form-note" role="status" hidden></p>
+            </form>
+
+            <form class="auth-form hidden" data-auth-form="signup">
+              <div class="section-heading compact">
+                <div class="eyebrow">Create account</div>
+                <h2 class="section-title small">Join GenuineTrade</h2>
+                <p class="section-copy">
+                  Choose your role and launch directly into the right dashboard workflow.
+                </p>
+              </div>
+
+              <div class="form-grid">
+                <div class="field-group">
+                  <label for="signup-name">Name</label>
+                  <input id="signup-name" name="name" type="text" placeholder="Your full name" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="signup-role">Role</label>
+                  <select id="signup-role" name="role" required>
+                    <option value="exporter">Exporter</option>
+                    <option value="buyer">Buyer</option>
+                  </select>
+                </div>
+
+                <div class="field-group">
+                  <label for="signup-company">Company</label>
+                  <input id="signup-company" name="companyName" type="text" placeholder="Company name" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="signup-country">Country</label>
+                  <select id="signup-country" name="country" data-country-select data-placeholder="Select country" required></select>
+                </div>
+
+                <div class="field-group">
+                  <label for="signup-email">Email</label>
+                  <input id="signup-email" name="email" type="email" placeholder="you@company.com" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="signup-password">Password</label>
+                  <input
+                    id="signup-password"
+                    name="password"
+                    type="password"
+                    placeholder="Create a secure password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="role-panel" data-signup-role-panel="exporter">
+                <div class="section-heading compact">
+                  <div class="eyebrow">Exporter details</div>
+                  <h3 class="section-title small">Compliance and product readiness</h3>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field-group">
+                    <label for="signup-exporter-product">Primary Product</label>
+                    <input
+                      id="signup-exporter-product"
+                      name="product"
+                      type="text"
+                      placeholder="Example: Organic spices"
+                    />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-exporter-moq">MOQ</label>
+                    <input id="signup-exporter-moq" name="moq" type="text" placeholder="Example: 500 kg" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-exporter-certifications">Certifications</label>
+                    <input
+                      id="signup-exporter-certifications"
+                      name="certifications"
+                      type="text"
+                      placeholder="Example: ISO 22000, USDA Organic"
+                    />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-exporter-website">Website</label>
+                    <input
+                      id="signup-exporter-website"
+                      name="website"
+                      type="url"
+                      placeholder="https://yourcompany.com"
+                    />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-exporter-iec">IEC</label>
+                    <input id="signup-exporter-iec" name="iec" type="text" placeholder="IEC number" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-exporter-gst">GST</label>
+                    <input id="signup-exporter-gst" name="gst" type="text" placeholder="GST number" />
+                  </div>
+
+                  <div class="field-group full">
+                    <label for="signup-exporter-details">Product Details</label>
+                    <textarea
+                      id="signup-exporter-details"
+                      name="productDetails"
+                      placeholder="Share your key export strengths, pack sizes, and category positioning"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="role-panel hidden" data-signup-role-panel="buyer">
+                <div class="section-heading compact">
+                  <div class="eyebrow">Buyer details</div>
+                  <h3 class="section-title small">First RFQ setup</h3>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field-group">
+                    <label for="signup-buyer-product">Product Requirement</label>
+                    <input
+                      id="signup-buyer-product"
+                      name="buyerProduct"
+                      type="text"
+                      placeholder="Example: Cotton garments"
+                    />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-buyer-quantity">Quantity</label>
+                    <input id="signup-buyer-quantity" name="quantity" type="text" placeholder="Example: 2000 pcs" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-buyer-preferred-country">Preferred Country</label>
+                    <select
+                      id="signup-buyer-preferred-country"
+                      name="preferredCountry"
+                      data-country-select
+                      data-include-any="true"
+                      data-any-label="Any approved country"
+                    ></select>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="signup-buyer-certifications">Required Certifications</label>
+                    <input
+                      id="signup-buyer-certifications"
+                      name="requiredCertifications"
+                      type="text"
+                      placeholder="Example: GOTS, SEDEX"
+                    />
+                  </div>
+
+                  <div class="field-group full">
+                    <label for="signup-buyer-notes">RFQ Notes</label>
+                    <textarea
+                      id="signup-buyer-notes"
+                      name="notes"
+                      placeholder="Packaging needs, destination market, delivery timeline, or specs"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-actions compact-row">
+                <button class="btn btn-accent" type="submit">Create Account</button>
+                <button class="btn btn-ghost" type="button" data-auth-switch="login">Already registered?</button>
+              </div>
+
+              <p class="form-note" role="status" hidden></p>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <p>&copy; <span data-current-year></span> GenuineTrade</p>
+            <p>Role-based auth, live market pulse, Firebase workflows, and hosting-ready structure.</p>
+          </div>
+          <a class="btn btn-secondary btn-small" href="index.html">Return to Homepage</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

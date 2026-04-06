@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exporter Workspace | GenuineTrade</title>
+    <meta
+      name="description"
+      content="Manage exporter profile details, trust status, notifications, and inbound RFQs inside GenuineTrade."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="exporter">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-name">GenuineTrade</span>
+          <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="exporter.html">Exporter</a>
+          <a href="buyer.html" data-buyer-only hidden>Buyer</a>
+          <a href="admin.html" data-admin-only hidden>Admin</a>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="workspace-main">
+      <section class="section">
+        <div class="container">
+          <div class="banner" data-mode-banner hidden></div>
+
+          <section class="workspace-hero">
+            <div class="workspace-heading">
+              <div class="eyebrow">Exporter control center</div>
+              <h1><span data-exporter-company>Exporter Profile</span></h1>
+              <p data-exporter-summary>
+                Manage product readiness, compliance, matched RFQs, and buyer conversations from one
+                exporter workspace.
+              </p>
+            </div>
+
+            <div class="workspace-meta">
+              <div class="pill-row">
+                <div data-exporter-status-slot></div>
+                <div data-exporter-badge-slot></div>
+              </div>
+
+              <div class="workspace-actions">
+                <a class="btn btn-primary" href="dashboard.html">Back to Dashboard</a>
+                <a class="btn btn-ghost" href="admin.html" data-admin-only hidden>Open Admin Panel</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="stat-grid" data-exporter-stats></section>
+
+          <div class="panel-grid panel-grid-wide">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Profile editor</div>
+                  <h2>Company, compliance, and product details</h2>
+                </div>
+              </div>
+
+              <form data-exporter-profile-form>
+                <div class="form-grid">
+                  <div class="field-group">
+                    <label for="exporter-company-name">Company Name</label>
+                    <input id="exporter-company-name" name="companyName" type="text" required />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-country-input">Country</label>
+                    <select id="exporter-country-input" name="country" data-country-select data-placeholder="Select country" required></select>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-product-input">Primary Product</label>
+                    <input id="exporter-product-input" name="product" type="text" required />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-moq-input">MOQ</label>
+                    <input id="exporter-moq-input" name="moq" type="text" placeholder="Example: 500 kg" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-certifications-input">Certifications</label>
+                    <input
+                      id="exporter-certifications-input"
+                      name="certifications"
+                      type="text"
+                      placeholder="Example: ISO 22000, USDA Organic"
+                    />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-website-input">Website</label>
+                    <input id="exporter-website-input" name="website" type="url" placeholder="https://yourcompany.com" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-iec-input">IEC</label>
+                    <input id="exporter-iec-input" name="iec" type="text" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-gst-input">GST</label>
+                    <input id="exporter-gst-input" name="gst" type="text" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-completed-deals">Completed Deals</label>
+                    <input id="exporter-completed-deals" name="completedDeals" type="number" min="0" step="1" />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="exporter-response-rate">Response Rate (%)</label>
+                    <input id="exporter-response-rate" name="responseRate" type="number" min="0" max="100" step="1" />
+                  </div>
+
+                  <div class="field-group full">
+                    <label for="exporter-details-input">Product Details</label>
+                    <textarea
+                      id="exporter-details-input"
+                      name="productDetails"
+                      placeholder="Share specs, packaging, private label capability, or export-readiness notes"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="hero-actions compact-row">
+                  <button class="btn btn-primary" type="submit">Save Profile</button>
+                </div>
+
+                <p class="form-note" role="status" hidden></p>
+              </form>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Trust overview</div>
+                  <h2>G-Check standing</h2>
+                </div>
+              </div>
+
+              <div class="info-list" data-exporter-metrics></div>
+            </section>
+          </div>
+
+          <div class="panel-grid">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Incoming demand</div>
+                  <h2>Matched buyer RFQs</h2>
+                </div>
+              </div>
+
+              <div class="list-grid" data-exporter-rfqs></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Notifications</div>
+                  <h2>Latest exporter alerts</h2>
+                </div>
+              </div>
+
+              <div class="list-grid" data-exporter-notifications></div>
+            </section>
+          </div>
+
+          <section class="info-card">
+            <div class="card-header">
+              <div>
+                <div class="eyebrow">Buyer chat</div>
+                <h2>Conversations with matched buyers</h2>
+              </div>
+            </div>
+
+            <div class="chat-shell">
+              <aside class="thread-list" data-chat-threads></aside>
+
+              <div class="chat-panel">
+                <div class="chat-panel-header">
+                  <h3 data-chat-title>Select a buyer conversation</h3>
+                  <p data-chat-subtitle>Choose a matched RFQ or thread to start messaging.</p>
+                </div>
+
+                <div class="chat-messages" data-chat-messages></div>
+
+                <form class="chat-form" data-chat-form>
+                  <input type="hidden" name="receiverId" />
+                  <input type="hidden" name="rfqId" />
+                  <textarea
+                    name="text"
+                    placeholder="Send a message to the selected buyer"
+                    required
+                  ></textarea>
+                  <button class="btn btn-accent" type="submit">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <p>&copy; <span data-current-year></span> GenuineTrade</p>
+            <p>Exporter-side trust management, RFQ visibility, notifications, and buyer chat.</p>
+          </div>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

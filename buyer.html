@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buyer Workspace | GenuineTrade</title>
+    <meta
+      name="description"
+      content="Search approved exporters, submit RFQs, review matches, and chat with suppliers inside GenuineTrade."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="buyer">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-name">GenuineTrade</span>
+          <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="buyer.html">Buyer</a>
+          <a href="exporter.html" data-exporter-only hidden>Exporter</a>
+          <a href="admin.html" data-admin-only hidden>Admin</a>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="workspace-main">
+      <section class="section">
+        <div class="container">
+          <div class="banner" data-mode-banner hidden></div>
+
+          <section class="workspace-hero">
+            <div class="workspace-heading">
+              <div class="eyebrow">Buyer sourcing desk</div>
+              <h1><span data-buyer-company>Buyer Workspace</span></h1>
+              <p data-buyer-summary>
+                Search exporters, submit structured RFQs, review ranked matches, and move into direct
+                supplier conversations.
+              </p>
+            </div>
+
+            <div class="workspace-meta">
+              <div class="pill-row">
+                <div data-buyer-role-slot></div>
+                <div data-buyer-country-slot></div>
+              </div>
+
+              <div class="workspace-actions">
+                <a class="btn btn-primary" href="dashboard.html">Back to Dashboard</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="stat-grid" data-buyer-stats></section>
+
+          <div class="panel-grid panel-grid-wide">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Search exporters</div>
+                  <h2>Discover approved suppliers</h2>
+                </div>
+              </div>
+
+              <form class="toolbar search-toolbar" data-search-form>
+                <input
+                  name="query"
+                  type="text"
+                  placeholder="Search by product, for example turmeric, garments, leather"
+                />
+                <select
+                  name="country"
+                  data-country-select
+                  data-include-any="true"
+                  data-any-label="All countries"
+                ></select>
+                <button class="btn btn-primary btn-small" type="submit">Search</button>
+              </form>
+
+              <div class="list-grid" data-search-results></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Create RFQ</div>
+                  <h2>Submit a sourcing request</h2>
+                </div>
+              </div>
+
+              <form data-rfq-form>
+                <div class="form-grid">
+                  <div class="field-group full">
+                    <label for="rfq-product">Product</label>
+                    <input
+                      id="rfq-product"
+                      name="product"
+                      type="text"
+                      placeholder="What product are you sourcing?"
+                      required
+                    />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="rfq-quantity">Quantity</label>
+                    <input id="rfq-quantity" name="quantity" type="text" placeholder="Example: 1500 kg" required />
+                  </div>
+
+                  <div class="field-group">
+                    <label for="rfq-preferred-country">Preferred Country</label>
+                    <select
+                      id="rfq-preferred-country"
+                      name="preferredCountry"
+                      data-country-select
+                      data-include-any="true"
+                      data-any-label="Any approved country"
+                    ></select>
+                  </div>
+
+                  <div class="field-group full">
+                    <label for="rfq-certifications">Required Certifications</label>
+                    <input
+                      id="rfq-certifications"
+                      name="requiredCertifications"
+                      type="text"
+                      placeholder="Example: GOTS, SEDEX, USDA Organic"
+                    />
+                  </div>
+
+                  <div class="field-group full">
+                    <label for="rfq-notes">Notes</label>
+                    <textarea
+                      id="rfq-notes"
+                      name="notes"
+                      placeholder="Add specs, destination market, packaging needs, or delivery expectations"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="hero-actions compact-row">
+                  <button class="btn btn-accent" type="submit">Submit RFQ</button>
+                </div>
+
+                <p class="form-note" role="status" hidden></p>
+              </form>
+            </section>
+          </div>
+
+          <div class="panel-grid">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Matches</div>
+                  <h2>Best-fit exporters for your latest RFQ</h2>
+                </div>
+              </div>
+
+              <div class="list-grid" data-rfq-matches></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Sent RFQs</div>
+                  <h2>Your request history</h2>
+                </div>
+              </div>
+
+              <div class="list-grid" data-buyer-rfqs></div>
+            </section>
+          </div>
+
+          <div class="panel-grid">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Notifications</div>
+                  <h2>Buyer-side alerts</h2>
+                </div>
+              </div>
+
+              <div class="list-grid" data-buyer-notifications></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Market pulse</div>
+                  <h2>Live sourcing context</h2>
+                </div>
+              </div>
+
+              <div class="market-pulse-grid" data-buyer-market-pulse></div>
+            </section>
+          </div>
+
+          <section class="info-card">
+            <div class="card-header">
+              <div>
+                <div class="eyebrow">Supplier chat</div>
+                <h2>Conversations with exporters</h2>
+              </div>
+            </div>
+
+            <div class="chat-shell">
+              <aside class="thread-list" data-chat-threads></aside>
+
+              <div class="chat-panel">
+                <div class="chat-panel-header">
+                  <h3 data-chat-title>Select an exporter conversation</h3>
+                  <p data-chat-subtitle>Use a search result, match card, or existing thread to start messaging.</p>
+                </div>
+
+                <div class="chat-messages" data-chat-messages></div>
+
+                <form class="chat-form" data-chat-form>
+                  <input type="hidden" name="receiverId" />
+                  <input type="hidden" name="rfqId" />
+                  <textarea
+                    name="text"
+                    placeholder="Send a message to the selected exporter"
+                    required
+                  ></textarea>
+                  <button class="btn btn-accent" type="submit">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <p>&copy; <span data-current-year></span> GenuineTrade</p>
+            <p>Buyer-side exporter search, RFQ management, live matching, and supplier chat.</p>
+          </div>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

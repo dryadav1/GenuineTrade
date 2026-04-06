@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | GenuineTrade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="login">
+    <header class="site-header" data-site-header>
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-mark">GT</span>
+          <span class="brand-copy">
+            <span class="brand-name">GenuineTrade</span>
+            <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html#market">Market</a>
+          <a href="index.html#insights">Insights</a>
+          <a href="index.html#pricing">Pricing</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="index.html">Back Home</a>
+          <div class="profile-menu" data-profile-menu>
+            <button class="profile-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-profile-trigger>
+              <span data-profile-initials>GT</span>
+            </button>
+            <div class="profile-dropdown" data-profile-dropdown>
+              <a href="dashboard.html" data-dashboard-link>Dashboard</a>
+              <button type="button" data-logout>Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <section class="section">
+        <div class="container auth-layout">
+          <aside class="auth-copy">
+            <span class="eyebrow">Simple login system</span>
+            <h1>Access your trade workspace.</h1>
+            <p>
+              Sign in to manage your current plan, review payments, and access the admin panel if
+              you're the platform operator.
+            </p>
+
+            <div class="auth-feature-list">
+              <article class="auth-feature-card">
+                <strong>Subscription access</strong>
+                <p>Track active plans and expiry from one clean dashboard.</p>
+              </article>
+              <article class="auth-feature-card">
+                <strong>Admin-ready</strong>
+                <p>Use the configured admin credentials from your server environment for control access.</p>
+              </article>
+            </div>
+          </aside>
+
+          <section class="auth-card">
+            <div class="auth-switch">
+              <button class="auth-switch-btn is-active" type="button" data-auth-target="login">Login</button>
+              <button class="auth-switch-btn" type="button" data-auth-target="signup">Sign up</button>
+            </div>
+
+            <form class="stack-form" data-login-form>
+              <div class="panel-head">
+                <span class="panel-chip">Welcome back</span>
+                <h2>Login</h2>
+              </div>
+
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" placeholder="you@company.com" required />
+              </label>
+              <label>
+                <span>Password</span>
+                <input name="password" type="password" placeholder="Enter password" required />
+              </label>
+
+              <button class="btn btn-primary" type="submit">Continue</button>
+              <p class="form-feedback" data-login-feedback hidden></p>
+            </form>
+
+            <form class="stack-form hidden" data-signup-form>
+              <div class="panel-head">
+                <span class="panel-chip">Create account</span>
+                <h2>Start trading</h2>
+              </div>
+
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" placeholder="Your full name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" placeholder="you@company.com" required />
+              </label>
+              <label>
+                <span>Password</span>
+                <input name="password" type="password" placeholder="Minimum 6 characters" required />
+              </label>
+
+              <button class="btn btn-primary" type="submit">Create account</button>
+              <p class="form-feedback" data-signup-feedback hidden></p>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" data-toast hidden></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

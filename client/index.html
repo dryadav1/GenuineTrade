@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenuineTrade | Global Trade. Built on Trust.</title>
+    <meta
+      name="description"
+      content="GenuineTrade is a premium B2B trade platform that helps verified exporters and real buyers connect through trusted workflows, RFQs, and subscription plans."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header" data-site-header>
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-mark">GT</span>
+          <span class="brand-copy">
+            <span class="brand-name">GenuineTrade</span>
+            <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#market">Market</a>
+          <a href="#insights">Insights</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="login.html" data-guest-only>Start Trading</a>
+          <a class="btn btn-secondary" href="dashboard.html" data-auth-only hidden>Dashboard</a>
+
+          <div class="profile-menu" data-profile-menu>
+            <button class="profile-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-profile-trigger>
+              <span data-profile-initials>GT</span>
+            </button>
+            <div class="profile-dropdown" data-profile-dropdown>
+              <a href="dashboard.html" data-dashboard-link>Dashboard</a>
+              <button type="button" data-logout>Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Trusted B2B trade network</span>
+            <h1>Global Trade. Built on Trust.</h1>
+            <p>
+              Connect with verified exporters and real buyers worldwide through a clean, premium
+              trade workflow designed for speed, clarity, and confidence.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#market">I'm an Exporter</a>
+              <a class="btn btn-secondary" href="#market">I'm an Importer</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="mini-stat">
+                <strong data-stat-exporters>0</strong>
+                <span>Exporter requests</span>
+              </div>
+              <div class="mini-stat">
+                <strong data-stat-rfqs>0</strong>
+                <span>RFQs submitted</span>
+              </div>
+              <div class="mini-stat">
+                <strong data-stat-paid>0</strong>
+                <span>Active subscriptions</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <span class="panel-badge">Premium workflow</span>
+            <h2>Minimal infrastructure for serious trade teams.</h2>
+            <p>
+              Capture exporter leads, collect RFQs, run subscription plans, and manage the
+              marketplace from a single SaaS control layer.
+            </p>
+
+            <div class="hero-panel-grid">
+              <article class="soft-card">
+                <span class="soft-card-icon">EX</span>
+                <div>
+                  <strong>Verified exporters</strong>
+                  <p>Structured submissions for faster onboarding and trust screening.</p>
+                </div>
+              </article>
+              <article class="soft-card">
+                <span class="soft-card-icon">RF</span>
+                <div>
+                  <strong>Real RFQs</strong>
+                  <p>Importers send precise requirements instead of vague marketplace noise.</p>
+                </div>
+              </article>
+              <article class="soft-card">
+                <span class="soft-card-icon">PL</span>
+                <div>
+                  <strong>Paid access</strong>
+                  <p>Monetize with dynamic plans and Razorpay-backed subscriptions.</p>
+                </div>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="market">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Quick forms</span>
+            <h2>Capture exporter leads and live buyer demand in one place.</h2>
+            <p>
+              GenuineTrade keeps the entry point simple: one polished flow for exporters to get
+              verified and another for importers to request quotes.
+            </p>
+          </div>
+
+          <div class="form-grid">
+            <article class="panel-card">
+              <div class="panel-head">
+                <span class="panel-chip">Exporter form</span>
+                <h3>Get your company verified</h3>
+              </div>
+
+              <form class="stack-form" data-exporter-form>
+                <div class="input-grid">
+                  <label>
+                    <span>Name</span>
+                    <input name="name" type="text" placeholder="Your full name" required />
+                  </label>
+                  <label>
+                    <span>Company Name</span>
+                    <input name="companyName" type="text" placeholder="Company name" required />
+                  </label>
+                  <label>
+                    <span>Product</span>
+                    <input name="product" type="text" placeholder="Primary export product" required />
+                  </label>
+                  <label>
+                    <span>Country</span>
+                    <input name="country" type="text" placeholder="Country" required />
+                  </label>
+                  <label class="full">
+                    <span>Contact</span>
+                    <input name="contact" type="text" placeholder="Email or phone number" required />
+                  </label>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Get Verified</button>
+                <p class="form-feedback" data-exporter-feedback hidden></p>
+              </form>
+            </article>
+
+            <article class="panel-card">
+              <div class="panel-head">
+                <span class="panel-chip">Importer form</span>
+                <h3>Request a quote from verified suppliers</h3>
+              </div>
+
+              <form class="stack-form" data-rfq-form>
+                <div class="input-grid">
+                  <label>
+                    <span>Name</span>
+                    <input name="name" type="text" placeholder="Your full name" required />
+                  </label>
+                  <label>
+                    <span>Product Required</span>
+                    <input name="product" type="text" placeholder="What are you sourcing?" required />
+                  </label>
+                  <label>
+                    <span>Quantity</span>
+                    <input name="quantity" type="text" placeholder="Quantity needed" required />
+                  </label>
+                  <label>
+                    <span>Country</span>
+                    <input name="country" type="text" placeholder="Destination country" required />
+                  </label>
+                  <label class="full">
+                    <span>Contact</span>
+                    <input name="contact" type="text" placeholder="Email or phone number" required />
+                  </label>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Request Quote</button>
+                <p class="form-feedback" data-rfq-feedback hidden></p>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section muted-section" id="insights">
+        <div class="container">
+          <div class="section-heading centered">
+            <span class="eyebrow">Trust section</span>
+            <h2>Built for premium trade relationships, not anonymous leads.</h2>
+          </div>
+
+          <div class="trust-grid">
+            <article class="trust-card">
+              <span class="trust-icon">01</span>
+              <h3>Verified Businesses</h3>
+              <p>Exporter records are captured in a structured pipeline built for manual verification.</p>
+            </article>
+            <article class="trust-card">
+              <span class="trust-icon">02</span>
+              <h3>Real Buyers Only</h3>
+              <p>RFQs include product, quantity, geography, and contact information for quality sourcing.</p>
+            </article>
+            <article class="trust-card">
+              <span class="trust-icon">03</span>
+              <h3>Secure Trade</h3>
+              <p>Subscriptions, admin review, and secure payment verification keep the workflow credible.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Pricing</span>
+            <h2>Simple plans that scale with your trade volume.</h2>
+            <p>
+              Plans are loaded dynamically from MongoDB so your pricing can evolve without frontend
+              redeploys.
+            </p>
+          </div>
+
+          <div class="pricing-grid" data-plan-grid>
+            <article class="pricing-card skeleton-card">
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line short"></div>
+              <div class="skeleton-line"></div>
+            </article>
+          </div>
+          <p class="section-note" data-plan-feedback hidden></p>
+        </div>
+      </section>
+
+      <section class="section soft-section">
+        <div class="container">
+          <div class="section-heading centered">
+            <span class="eyebrow">How it works</span>
+            <h2>Trade operations in three clean steps.</h2>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-index">1</span>
+              <h3>Register</h3>
+              <p>Create your account to manage submissions, subscriptions, and marketplace access.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-index">2</span>
+              <h3>Get Verified</h3>
+              <p>Exporters submit profile details while importers send clear sourcing requirements.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-index">3</span>
+              <h3>Connect &amp; Trade</h3>
+              <p>Use your dashboard and plan access to manage trade readiness and subscription status.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <div>
+          <strong>GenuineTrade</strong>
+          <p>Premium B2B trade software for trusted exporter and buyer workflows.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#market">Market</a>
+          <a href="#insights">Insights</a>
+          <a href="#pricing">Pricing</a>
+          <a href="mailto:contact@genuinetrade.com">Contact</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://x.com" target="_blank" rel="noreferrer">X</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="toast" data-toast hidden></div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

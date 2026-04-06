@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | GenuineTrade</title>
+    <meta
+      name="description"
+      content="Role-aware dashboard for GenuineTrade exporters, buyers, and admins."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="dashboard">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GenuineTrade home">
+          <span class="brand-name">GenuineTrade</span>
+          <span class="brand-tagline">Where Genuine Exporters Meet Real Buyers</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="exporter.html" data-exporter-only hidden>Exporter</a>
+          <a href="buyer.html" data-buyer-only hidden>Buyer</a>
+          <a href="admin.html" data-admin-only hidden>Admin</a>
+          <a href="index.html">Homepage</a>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="workspace-main">
+      <section class="section">
+        <div class="container">
+          <div class="banner" data-mode-banner hidden></div>
+
+          <section class="workspace-hero">
+            <div class="workspace-heading">
+              <div class="eyebrow">Unified dashboard</div>
+              <h1>Welcome back, <span data-user-name>Trade Member</span>.</h1>
+              <p data-dashboard-summary>
+                Your trust signals, sourcing flow, activity feed, and next actions all live here.
+              </p>
+            </div>
+
+            <div class="workspace-meta">
+              <div class="pill-row">
+                <div data-role-badge-slot></div>
+                <div data-status-badge-slot></div>
+              </div>
+
+              <div class="workspace-actions">
+                <a class="btn btn-primary" data-primary-action href="index.html">Open Workspace</a>
+                <a class="btn btn-ghost" href="index.html">Back to Homepage</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="stat-grid" data-dashboard-stats></section>
+
+          <div class="panel-grid panel-grid-wide">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Profile snapshot</div>
+                  <h2>Account details</h2>
+                </div>
+              </div>
+              <div class="info-list" data-profile-snapshot></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Notifications</div>
+                  <h2>Latest alerts</h2>
+                </div>
+              </div>
+              <div class="list-grid" data-dashboard-notifications></div>
+            </section>
+          </div>
+
+          <div class="panel-grid">
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Latest activity</div>
+                  <h2>Recent RFQs and matches</h2>
+                </div>
+              </div>
+              <div class="list-grid" data-activity-list></div>
+            </section>
+
+            <section class="info-card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow">Market pulse</div>
+                  <h2>Live FX and trade signals</h2>
+                </div>
+              </div>
+              <div class="market-pulse-grid" data-dashboard-market-pulse></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <p>&copy; <span data-current-year></span> GenuineTrade</p>
+            <p>Daily workflow access for exporters, buyers, and moderators.</p>
+          </div>
+          <button class="btn btn-secondary btn-small" type="button" data-logout>Logout</button>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
